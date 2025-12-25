@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+/* Theme */
+@theme {
+  /* Media Break Points */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-xxl: 1400px;
+}
+
+/* Custom Container */
+.custom-container {
+  @apply mx-auto w-full sm:w-135 md:w-180 lg:w-240 xl:w-285 xxl:w-330;
+}
