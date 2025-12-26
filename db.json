@@ -1,4 +1,114 @@
 {
-  "posts": [],
-  "users": []
+  "posts": [
+    {
+      "id": 1,
+      "title": "Introduction to Programming",
+      "description": "Learn the basic concepts of programming and problem solving.",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "title": "JavaScript Basics",
+      "description": "Understand variables, data types, and control structures in JavaScript.",
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "title": "Advanced JavaScript",
+      "description": "Deep dive into closures, scopes, and asynchronous JavaScript.",
+      "userId": 2
+    },
+    {
+      "id": 4,
+      "title": "TypeScript for Beginners",
+      "description": "A beginner-friendly guide to TypeScript and static typing.",
+      "userId": 2
+    },
+    {
+      "id": 5,
+      "title": "Working with APIs",
+      "description": "Learn how to consume and integrate REST APIs in your applications.",
+      "userId": 3
+    },
+    {
+      "id": 6,
+      "title": "React Components",
+      "description": "Build reusable UI components using React.",
+      "userId": 3
+    },
+    {
+      "id": 7,
+      "title": "React Hooks",
+      "description": "Understand useState, useEffect, and custom hooks in React.",
+      "userId": 1
+    },
+    {
+      "id": 8,
+      "title": "State Management with Redux",
+      "description": "Manage complex application state using Redux and Redux Toolkit.",
+      "userId": 2
+    },
+    {
+      "id": 9,
+      "title": "Node.js Essentials",
+      "description": "Learn the fundamentals of Node.js and server-side JavaScript.",
+      "userId": 3
+    },
+    {
+      "id": 10,
+      "title": "Express.js Framework",
+      "description": "Create fast and scalable backend applications using Express.js.",
+      "userId": 1
+    },
+    {
+      "id": 11,
+      "title": "Database Concepts",
+      "description": "Introduction to databases, collections, and relationships.",
+      "userId": 2
+    },
+    {
+      "id": 12,
+      "title": "MongoDB Basics",
+      "description": "Learn how to store and retrieve data using MongoDB.",
+      "userId": 3
+    },
+    {
+      "id": 13,
+      "title": "Authentication & Authorization",
+      "description": "Understand login systems, JWT, and user permissions.",
+      "userId": 1
+    },
+    {
+      "id": 14,
+      "title": "Testing JavaScript Applications",
+      "description": "Learn how to test JavaScript code using popular testing tools.",
+      "userId": 2
+    },
+    {
+      "id": 15,
+      "title": "Deploying Web Applications",
+      "description": "A guide to deploying frontend and backend applications.",
+      "userId": 3
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@test.com",
+      "password": "123456",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "email": "user1@test.com",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "id": 3,
+      "email": "user2@test.com",
+      "password": "123456",
+      "role": "user"
+    }
+  ]
 }

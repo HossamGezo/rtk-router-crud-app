@@ -16,7 +16,10 @@ const Home = () => {
         {Array(10)
           .fill(0)
           .map((_, index) => (
-            <div className="post p-2.5 bg-white rounded-md flex max-sm:flex-col items-center justify-between gap-5">
+            <div
+              key={index}
+              className="post p-2.5 bg-white rounded-md flex max-sm:flex-col items-center justify-between gap-5"
+            >
               <div className="post-info flex flex-1 w-full items-center justify-between gap-5">
                 <div className="post-number mr-auto py-1 px-2.5 bg-red-300 text-white font-bold rounded-md w-10 text-center">
                   {index + 1 < 10 ? "0" + (index + 1) : index + 1}
@@ -26,9 +29,9 @@ const Home = () => {
                 </div>
               </div>
               <div className="post-controllers flex items-center gap-1.5 ml-auto max-sm:w-full">
-                <Button className="flex-1">
-                  <Link to={`${index + 1}/edit`}>Edit</Link>
-                </Button>
+                <Link to={`post/${index + 1}/edit`} className="flex-1">
+                  <Button className="w-full">Edit</Button>
+                </Link>
                 <Button className="flex-1" variant="danger">
                   Delete
                 </Button>
