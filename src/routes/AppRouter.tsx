@@ -14,6 +14,8 @@ import AddPost from "../pages/add-post/AddPost";
 import EditPost from "../pages/edit-post/EditPost";
 // *** Error
 import Error from "../pages/error/Error";
+// *** PostDetails
+import PostDetails from "../pages/post-details/PostDetails";
 
 // - - - - - - - - - - AppRouter (Main Component)
 // *** Router
@@ -31,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "post/:id/edit",
         Component: EditPost,
+      },
+      {
+        path: "post/:id/details",
+        Component: PostDetails,
       },
       {path: "*", Component: Error},
     ],

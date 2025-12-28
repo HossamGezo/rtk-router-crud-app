@@ -1,14 +1,21 @@
 // - - - - - - - - - - Libraries
 // *** React
 import {createRoot} from "react-dom/client";
+// *** React Redux
+import {Provider} from "react-redux";
+
+// - - - - - - - - - - Redux Store
+import store from "./app/store";
 
 // - - - - - - - - - - Components
-// *** AppRouter Component
 import AppRouter from "./routes/AppRouter";
 
 // - - - - - - - - - - Styles
-// *** index Style
 import "./index.css";
 
 // - - - - - - - - - - Main (Root Component)
-createRoot(document.getElementById("root")!).render(<AppRouter />);
+createRoot(document.getElementById("root")!).render(
+  <Provider store={store}>
+    <AppRouter />
+  </Provider>
+);

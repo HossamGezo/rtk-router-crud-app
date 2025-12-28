@@ -8,6 +8,10 @@ import {z} from "zod";
 // *** Clsx
 import clsx from "clsx";
 
+// - - - - - - - - - - Redux
+import {useAppDispatch} from "../../app/hooks";
+import {addPost} from "../../features/posts/postSlice";
+
 // - - - - - - - - - - Components
 // *** Button
 import Button from "../../components/button/Button";
@@ -16,11 +20,13 @@ import InputField from "../../components/input-field/InputField";
 
 // - - - - - - - - - - AddPost (Main Component)
 const AddPost = () => {
+  // *** Redux Custom Hooks
+  const dispatch = useAppDispatch();
   // *** Zod Schema
   const schema = z.object({
     title: z
       .string()
-      .min(3, {message: "Title must be at least e characters"})
+      .min(3, {message: "Title must be at least 3 characters"})
       .max(10, {message: "Title must not exceed 10 characters"}),
     description: z
       .string()
@@ -38,9 +44,13 @@ const AddPost = () => {
     mode: "onChange",
     resolver: zodResolver(schema),
   });
-  const onSubmit: SubmitHandler<SchemaProps> = (data) => {
-    console.log(data);
-    reset();
+  const onSubmit: SubmitHandler<SchemaProps> = async (data) => {
+    try {
+      await dispatch(addPost(data)).unwrap();
+      reset();
+    } catch (error) {
+      alert(`Failed to add post ${error}`);
+    }
   };
   // *** Return JSX
   return (
@@ -55,6 +65,7 @@ const AddPost = () => {
           placeholder="Post Title"
           error={errors.title?.message}
           register={register}
+          className="text-[#333]"
         />
         <div
           className={clsx(
@@ -72,7 +83,7 @@ const AddPost = () => {
             id="description"
             placeholder="Post Content"
             className={clsx(
-              "outline-0 border p-1.5 rounded-sm w-75 md:w-135 lg:w-180 resize-none h-37.5",
+              "outline-0 border p-1.5 rounded-sm w-75 md:w-135 lg:w-180 resize-none h-37.5 text-[#333]",
               {
                 "border-green-500 focus:border-green-600 placeholder:text-green-600/50":
                   !errors.description,

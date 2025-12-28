@@ -14,3 +14,14 @@
 .custom-container {
   @apply mx-auto w-full sm:w-135 md:w-180 lg:w-240 xl:w-285 xxl:w-330;
 }
+
+/* Custom ScrollBar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+::-webkit-scrollbar-track {
+  @apply bg-purple-200 rounded-full;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-purple-500 rounded-full;
+}
