@@ -13,11 +13,14 @@ import {fetchPosts, deletePost} from "../../features/posts/postSlice";
 const Home = () => {
   // *** Redux Custom Hooks
   const {loading, posts, error} = useAppSelector((state) => state.posts);
+  const {isLoggedIn} = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
   // *** Dispatch Posts
   useEffect(() => {
-    dispatch(fetchPosts());
-  }, [dispatch]);
+    if (posts.length === 0) {
+      dispatch(fetchPosts());
+    }
+  }, [dispatch, posts]);
   // *** Delete Post
   const handleDelete = (postId: string, postTitle: string) => {
     if (confirm(`Do you really want to delete the post titled "${postTitle}"?`))
@@ -62,11 +65,14 @@ const Home = () => {
               </div>
               <div className="post-controllers flex items-center gap-1.5 ml-auto max-sm:w-full">
                 <Link to={`post/${post.id}/edit`} className="flex-1">
-                  <Button className="w-full">Edit</Button>
+                  <Button className="w-full" disabled={!isLoggedIn}>
+                    Edit
+                  </Button>
                 </Link>
                 <Button
                   className="flex-1"
                   variant="danger"
+                  disabled={!isLoggedIn}
                   onClick={() => handleDelete(post.id!, post.title)}
                 >
                   Delete

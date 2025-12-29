@@ -1,5 +1,4 @@
 // - - - - - - - - - - Libraries
-// *** React Router
 import {Link} from "react-router";
 
 // - - - - - - - - - - Error (Main Component)

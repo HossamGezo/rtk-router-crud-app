@@ -1,11 +1,7 @@
 // - - - - - - - - - - Libraries
-// *** React Hook Form
 import {useForm, type SubmitHandler} from "react-hook-form";
-// *** Zod Resolver
 import {zodResolver} from "@hookform/resolvers/zod";
-// *** Zod
 import {z} from "zod";
-// *** Clsx
 import clsx from "clsx";
 
 // - - - - - - - - - - Redux
@@ -13,9 +9,7 @@ import {useAppDispatch} from "../../app/hooks";
 import {addPost} from "../../features/posts/postSlice";
 
 // - - - - - - - - - - Components
-// *** Button
 import Button from "../../components/button/Button";
-// *** InputField
 import InputField from "../../components/input-field/InputField";
 
 // - - - - - - - - - - AddPost (Main Component)
