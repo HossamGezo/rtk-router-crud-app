@@ -1,6 +1,10 @@
 // - - - - - - - - - - Libraries
+import {useEffect} from "react";
 import {useParams} from "react-router";
-import {useAppSelector} from "../../app/hooks";
+
+// - - - - - - - - - - Redux Files
+import {useAppDispatch, useAppSelector} from "../../app/hooks";
+import {fetchPosts} from "../../features/posts/postSlice";
 
 // - - - - - - - - - - PostDetails (Main Component)
 const PostDetails = () => {
@@ -9,7 +13,17 @@ const PostDetails = () => {
 
   // *** Redux Custom Hook
   const {posts} = useAppSelector((state) => state.posts);
+  const dispatch = useAppDispatch();
+
+  // *** Post Search
   const post = posts.find((post) => post.id === params.id);
+
+  // *** Handle Refresh Side Effect
+  useEffect(() => {
+    if (!post && posts.length === 0) {
+      dispatch(fetchPosts());
+    }
+  }, [post, posts, dispatch]);
 
   // *** Return JSX
   return (

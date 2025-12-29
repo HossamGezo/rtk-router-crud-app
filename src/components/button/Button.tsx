@@ -1,9 +1,7 @@
 // - - - - - - - - - - Libraries
-// *** clsx
 import clsx from "clsx";
 
 // - - - - - - - - - - Types
-// *** ButtonProps
 type ButtonProps = {
   children: React.ReactNode;
   variant?: "primary" | "danger" | "outline";

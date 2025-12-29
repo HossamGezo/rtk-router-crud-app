@@ -3,7 +3,7 @@ import {configureStore} from "@reduxjs/toolkit";
 
 // - - - - - - - - - - Reducers
 import posts from "../features/posts/postSlice";
-import auth from "../features/auth/auth";
+import auth from "../features/auth/authSlice";
 
 // - - - - - - - - - - Store
 const store = configureStore({

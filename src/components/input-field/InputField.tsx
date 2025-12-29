@@ -1,7 +1,5 @@
 // - - - - - - - - - - Libraries
-// *** clsx
 import clsx from "clsx";
-// *** React Hook Form
 import type {Path, UseFormRegister, FieldValues} from "react-hook-form";
 
 // - - - - - - - - - - InputField (Main Component)

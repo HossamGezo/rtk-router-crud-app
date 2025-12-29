@@ -1,7 +1,5 @@
 // - - - - - - - - - - Libraries
-// *** Redux Toolkit
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-// *** Axios
 import axios from "axios";
 
 // - - - - - - - - - - Redux Logic
@@ -10,7 +8,7 @@ import axios from "axios";
 const baseUrl = "http://localhost:5050";
 
 // *** InitialStateProps (Type)
-type PostProps = {
+export type PostProps = {
   id?: string;
   title: string;
   description: string;

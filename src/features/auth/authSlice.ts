@@ -21,5 +21,5 @@ const authSlice = createSlice({
   },
 });
 
-export const register = authSlice.actions.toggleLogin;
+export const toggleLogin = authSlice.actions.toggleLogin;
 export default authSlice.reducer;

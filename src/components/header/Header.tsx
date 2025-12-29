@@ -1,10 +1,24 @@
+// - - - - - - - - - - Libraries
+import clsx from "clsx";
+
 // - - - - - - - - - - Components
-// *** Button
 import {NavLink} from "react-router";
 import Button from "../button/Button";
 
+// - - - - - - - - - - Redux Files
+import {useAppSelector} from "../../app/hooks";
+import {useDispatch} from "react-redux";
+import {toggleLogin} from "../../features/auth/authSlice";
+
 // - - - - - - - - - - Header (Main Component)
 const Header = () => {
+  // *** Redux Custom Hooks
+  const {isLoggedIn} = useAppSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  // *** Login Logic
+  const handleLogin = () => {
+    dispatch(toggleLogin());
+  };
   // *** Return JSX
   return (
     <>
@@ -41,7 +55,15 @@ const Header = () => {
           </ul>
         </nav>
         <div className="registeration">
-          <Button variant="outline">Login</Button>
+          <Button
+            variant="outline"
+            onClick={handleLogin}
+            className={clsx(
+              isLoggedIn && "border-green-500 bg-green-500 text-white"
+            )}
+          >
+            {isLoggedIn ? "Logout" : "Login"}
+          </Button>
         </div>
       </header>
     </>

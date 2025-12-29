@@ -1,7 +1,5 @@
 // - - - - - - - - - - Libraries
-// *** React
 import {createRoot} from "react-dom/client";
-// *** React Redux
 import {Provider} from "react-redux";
 
 // - - - - - - - - - - Redux Store
